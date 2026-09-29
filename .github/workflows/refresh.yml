@@ -1,0 +1,57 @@
+name: refresh-console
+
+# Nightly 06:00 Central (11:00 UTC) + on push to main + manual.
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "config/**"
+      - "scripts/**"
+      - "templates/**"
+      - "package.json"
+      - "package-lock.json"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-console
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck and lint
+        run: |
+          npm run typecheck
+          npm run lint
+
+      - name: Build SVGs and README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run build
+
+      - name: Commit only if generated output changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/generated
+          if git diff --cached --quiet; then
+            echo "No changes — skipping commit."
+          else
+            git commit -m "chore: nightly console refresh"
+            git push
+          fi
