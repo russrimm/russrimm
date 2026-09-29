@@ -1,0 +1,183 @@
+# config/profile.yml — single source of truth for the Agent Console profile.
+# Edit this file, then run `npm run build`. README.md is generated; never edit it by hand.
+
+meta:
+  owner: russrimm
+  name: Russ Rimmerman
+  prompt: "russ@foundry:~$"
+  title: Principal Cloud Solution Architect
+  focus: Agentic AI
+  employer: Microsoft
+  location: Cypress, TX
+  years_in_it: 30
+  site: https://www.russrimmerman.com
+  linkedin: https://www.linkedin.com/in/russrimm
+  rss: https://www.russrimmerman.com/rss.xml
+  timezone: America/Chicago
+
+bio:
+  - "I turn agentic AI from a demo into something that actually runs the business: **Microsoft Foundry**, **Copilot Studio**, **Microsoft 365 Copilot**, **Power Platform**, and **Azure**."
+  - "30+ years in IT across engineering, architecture, and customer-facing leadership. Most of what you'll find here started as a real customer problem."
+
+# Accent tints for cards, pstree, and the hero boot line. Keys are referenced by `domain` below.
+domains:
+  foundry:        { label: foundry,        color: purple }
+  copilot-studio: { label: copilot-studio, color: blue }
+  m365:           { label: m365-copilot,   color: cyan }
+  power-platform: { label: power-platform, color: pink }
+  azure:          { label: azure,          color: green }
+  automation:     { label: automation,     color: amber }
+
+# Animated `pstree` — what each domain actually covers.
+pstree:
+  - domain: foundry
+    children: [hosted-agents, model-selection, grounding, evaluation, tracing]
+  - domain: copilot-studio
+    children: [agents, extensibility, agent-sdk, adoption, governance]
+  - domain: m365
+    children: [declarative-agents, copilot-connectors, rollout]
+  - domain: power-platform
+    children: [code-apps, power-automate, dataverse, pcf, alm]
+  - domain: azure
+    children: [app-service, static-web-apps, container-apps, app-insights, bicep]
+
+# Featured agent cards (exactly one `featured: true` renders as the wide anchor card).
+agents:
+  - id: Pulse360
+    title: Pulse 360°
+    featured: true
+    domain: m365
+    tagline: "Every official Microsoft update stream — Microsoft 365, Azure, Fabric, Power Platform, Dynamics 365, Copilot, MSRC — in one filterable dashboard."
+    stack: [Next.js 16, React 19, TypeScript, Tailwind CSS 4, Radix UI, Vercel]
+    ping: https://www.mspulse360.app
+    status: auto
+
+  - id: MicrosoftCommunicationsPortal
+    title: Microsoft Communications Portal
+    domain: m365
+    tagline: "Self-hostable single pane of glass for release plans, roadmap, Azure updates, Message Center, and Service Health."
+    stack: [Web app, Azure, On-premises]
+    status: auto
+
+  - id: EconoMonitor
+    title: EconoMonitor
+    domain: azure
+    tagline: "US economic dashboard on the FRED and FRASER APIs, with AI insights and a streaming chat interface."
+    stack: [Next.js 16, TanStack Query, Chart.js, App Service]
+    status: auto
+
+  - id: copilot-decision-guidance
+    title: Agentic Solution Advisor
+    domain: foundry
+    tagline: "Recommends Microsoft 365 Copilot vs. Copilot Studio vs. Microsoft Foundry per use case, aligned to the Microsoft AI Decision Framework."
+    stack: [TypeScript, Decision framework]
+    status: auto
+
+  - id: Copilot-Studio-Azure-AI-Foundry-Agile-Framework
+    title: Copilot Studio + Foundry Agile Framework
+    domain: copilot-studio
+    tagline: "End-to-end implementation roadmap, best practices, and governance recommendations for enterprise rollout."
+    stack: [Copilot Studio, Microsoft Foundry, PowerShell]
+    status: auto
+
+  - id: CopilotStudioLabs
+    title: Copilot Studio Labs
+    domain: copilot-studio
+    tagline: "Scenario-driven, no-code labs for energy, manufacturing, healthcare, financial services, and public sector."
+    stack: [Copilot Studio, Labs, No-code]
+    status: auto
+
+  - id: Vibe-Coding-101
+    title: Vibe Coding 101
+    domain: azure
+    tagline: "Build and verify a small local app with the GitHub Copilot desktop app. No coding experience assumed."
+    stack: [GitHub Copilot, TypeScript, Hands-on lab]
+    status: auto
+
+  - id: Oil-Gas-CodeFirst
+    title: Oil & Gas Operations Portal
+    domain: power-platform
+    tagline: "Power Apps code app with an interactive 3D pump assembly, built on the Power Apps SDK."
+    stack: [Power Apps SDK, React, Three.js, GSAP]
+    status: auto
+
+# `ls ~/projects` — compact lists grouped by category.
+projects:
+  - category: Production-grade platforms
+    items:
+      - id: nhtsa
+        title: NHTSA Automotive Analyzer
+        tagline: "Every major NHTSA public API — VIN decoding, safety ratings, recalls, complaints, investigations — in one UI."
+      - id: Russ-Rimmerman-Blog
+        title: russrimmerman.com
+        tagline: "My blog and portfolio. Astro, MDX, Tailwind CSS, Azure Static Web Apps."
+  - category: Frameworks and decision guidance
+    items:
+      - id: AgenticAdvantageGuide
+        title: The Agentic Advantage — companion guide
+        tagline: "Companion website for the book."
+      - id: copilot-studio-kit-walkthrough
+        title: Copilot Studio Kit walkthrough
+        tagline: "End-to-end install and configuration guide for the Microsoft Copilot Studio Kit."
+  - category: Labs and enablement
+    items:
+      - id: AgentSDKDemo
+        title: Agent SDK Demo
+        tagline: "TypeScript/Node.js Direct to Engine client for Copilot Studio agents, with service principal and interactive auth."
+      - id: CopilotStudioSnowflakeKnowledge
+        title: Copilot Studio + Snowflake knowledge
+        tagline: "Configuring Snowflake as a Copilot Studio knowledge source."
+  - category: Automation accelerators
+    items:
+      - id: AADAppSecretsnCertsExpirationNotification
+        title: App secret & certificate expiration alerts
+        tagline: "Proactively notifies Microsoft Entra ID admins before client secrets and certificates expire."
+      - id: Power-Platform-Copilot-Studio-News-Automation
+        title: Power Platform & Copilot Studio news automation
+        tagline: "Gathers blog, YouTube, and service message updates, summarizes them, and emails a digest."
+      - id: ProductNewsAutomation
+        title: Product news automation
+        tagline: "RSS and Microsoft 365 Message Center digest flow for a configurable product list."
+      - id: PowerPlatformAppInsights
+        title: Power Platform + Application Insights
+        tagline: "Wiring Power Platform telemetry into Application Insights."
+
+book:
+  title: The Agentic Advantage
+  subtitle: Your guide to thriving in the AI era
+  pitch: "Practical, plain-English AI guidance: fundamentals, prompting, personal AI systems, and a 90-day action plan."
+  chapters: 13
+  appendices: 3
+  highlights:
+    - "05 The Art of Prompting"
+    - "07 Building Personal AI Systems"
+    - "08 AI at Work: The Monday Morning Playbook"
+    - "13 Your 90-Day Action Plan"
+  url: https://github.com/russrimm/AgenticAdvantageGuide
+
+monitor:
+  # Markup and notebook output inflate byte counts without reflecting authored code.
+  exclude_languages: [HTML, CSS, SCSS, Jupyter Notebook]
+  top_languages: 6
+  top_processes: 6
+
+feed:
+  count: 5
+
+stack:
+  agents:    [Microsoft Foundry, Copilot Studio, Microsoft 365 Copilot, GitHub Copilot]
+  platform:  [Power Platform, Dataverse, Power Automate, Power Apps code apps, PCF]
+  cloud:     [Azure App Service, Static Web Apps, Container Apps, Azure Monitor, Bicep]
+  languages: [TypeScript, JavaScript, Python, PowerShell, C#]
+  web:       [React, Next.js, Node.js, Vite, Tailwind CSS, Astro, Flask]
+  principle: "the profile you're reading is rebuilt nightly by its own pipeline"
+
+background:
+  - Principal Cloud Solution Architect, Microsoft — Power Platform / Low Code
+  - Previously Senior Customer Engineer and Senior Technical Account Manager at Microsoft
+  - Co-author of Microsoft Press field experience content in systems management and update management
+  - Author of **The Agentic Advantage**
+  - Regular technical contributor with hands-on demos and walkthroughs for Copilot Studio, Microsoft Foundry, and cloud automation
+
+rules:
+  active_window_days: 30

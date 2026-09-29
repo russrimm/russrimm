@@ -1,0 +1,27 @@
+{
+  "name": "russrimm-profile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generator for the russrimm GitHub profile README (Agent Console).",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "build:offline": "tsx scripts/build.ts --offline",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.11.1",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.2",
+    "eslint": "^10.11.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.2-alpha.4"
+  }
+}
